@@ -603,19 +603,12 @@
   const namaTamu = urlParams.get('nama');
 
   document.getElementById('namaTamu').textContent = `${namaTamu}`;
+	   const inputField = document.querySelector('input[name="nama"]');
+	   if (inputField) {
+		   inputField.vadue = namaTamu || '';
+	   }
 </script>
-	  <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const namaTamu = urlParams.get('nama');
-
-            // Mengisi input form dengan nilai namaTamu
-            const inputField = document.querySelector('input[name="nama"]');
-            if (inputField) {
-                inputField.value = namaTamu || ''; // Mengisi jika ada, jika tidak kosong
-            }
-        }
-    </script>
+	  
 
 </body>
 
