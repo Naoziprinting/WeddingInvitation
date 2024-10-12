@@ -574,8 +574,12 @@
   <script>
     window.addEventListener("load", function () {
       const form = document.getElementById('my-form');
+      const submitButton = form.querySelector('button[type="submit"]'); // Pastikan untuk menargetkan tombol submit
+      
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+        submitButton.disabled = true; // Menonaktifkan tombol
+
         const data = new FormData(form);
         const action = e.target.action;
         fetch(action, {
@@ -585,9 +589,14 @@
           .then(() => {
             alert("Konfirmasi kehadiran berhasil terkirim!");
           })
+          .catch(() => {
+            alert("Terjadi kesalahan. Silakan coba lagi.");
+            submitButton.disabled = false; // Mengaktifkan kembali tombol jika ada kesalahan
+          });
       });
     });
-  </script>
+</script>
+
   
    <script>
   const urlParams = new URLSearchParams(window.location.search);
