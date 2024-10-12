@@ -606,6 +606,20 @@
 
 </script>
 
+	  <script>
+        window.onload = function() {
+            // Mengambil URL saat ini
+            const url = window.location.href;
+            // Memisahkan URL berdasarkan '/'
+            const parts = url.split('/');
+            // Mengambil bagian terakhir dari URL
+            const lastPart = parts[parts.length - 1];
+
+            // Mengisi input form dengan nilai dari bagian terakhir URL
+            const inputField = document.getElementById('namaTamu');
+            inputField.value = lastPart;
+        }
+    </script>
   
 </body>
 
