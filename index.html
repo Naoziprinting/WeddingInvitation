@@ -459,7 +459,7 @@
           <div class="card bg-fee rounded-3 p-3">
             <form action="https://script.google.com/macros/s/AKfycbykawoMiDAO8XONjY6asEauKYkv2nBGCMzt_smoUD8gOP3-Fs7BNxn-K-4N2Jl9q02u/exec" method="post" id="my-form">
               <div class="mb-3">
-                <input type="text" name="nama" id="namaTamu" placeholder="Nama" class="form-control" required />
+                <input type="text" name="nama" placeholder="Nama" class="form-control" required />
               </div>
               <div class="mb-3">
                 <textarea name="ucapan" placeholder="Ucapan" rows="4" class="form-control" required></textarea>
@@ -603,24 +603,10 @@
   const namaTamu = urlParams.get('nama');
 
   document.getElementById('namaTamu').textContent = `${namaTamu}`;
+document.getElemenByName('nama').textContent = `${nama}`;
 
 </script>
 
-	  <script>
-        window.onload = function() {
-            // Mengambil URL saat ini
-            const url = window.location.href;
-            // Memisahkan URL berdasarkan '/'
-            const parts = url.split('/');
-            // Mengambil bagian terakhir dari URL
-            const lastPart = parts[parts.length - 1];
-
-            // Mengisi input form dengan nilai dari bagian terakhir URL
-            const inputField = document.getElementById('namaTamu');
-            inputField.value = lastPart;
-        }
-    </script>
-  
 </body>
 
 </html>
